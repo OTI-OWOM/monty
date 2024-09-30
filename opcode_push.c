@@ -9,25 +9,25 @@
   */
 void push(stack_t **stack, unsigned int data)
 {
-	stack_t *new_node = NULL;
+stack_t *new_node = NULL;
 
-	new_node = malloc(sizeof(stack_t));
-	if (!new_node)
-		handle_error(ERR_MALLOC, NULL, 0, NULL);
+new_node = malloc(sizeof(stack_t));
+if (!new_node)
+handle_error(ERR_MALLOC, NULL, 0, NULL);
 
-	new_node->n = data;
-	if (*stack)
-	{
-		new_node->next = *stack;
-		new_node->prev = (*stack)->prev;
-		(*stack)->prev = new_node;
-		*stack = new_node;
-		return;
-	}
+new_node->n = data;
+if (*stack)
+{
+new_node->next = *stack;
+new_node->prev = (*stack)->prev;
+(*stack)->prev = new_node;
+*stack = new_node;
+return;
+}
 
-	new_node->next = *stack;
-	new_node->prev = NULL;
-	*stack = new_node;
+new_node->next = *stack;
+new_node->prev = NULL;
+*stack = new_node;
 }
 
 /**
