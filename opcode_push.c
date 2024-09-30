@@ -61,4 +61,3 @@ new_node->next = *stack;
 new_node->prev = NULL;
 *stack = new_node;
 }
-
